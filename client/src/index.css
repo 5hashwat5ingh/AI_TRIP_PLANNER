@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #F6F3ED;
+    --bg-secondary: #E9E3D8;
+    --bg-surface: #FFFFFF;
+    --border-subtle: #D5CDBE;
+    --border-dark: #17201C;
+    --text-primary: #17201C;
+    --text-muted: #5C6B64;
+    --accent-terracotta: #C45D3A;
+    --accent-olive: #66705B;
+    --accent-forest: #172B2A;
+  }
+
+  body {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-editorial {
+    font-family: 'DM Serif Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Editorial layout rules */
+.editorial-border {
+  border: 1px solid #D5CDBE;
+}
+
+.editorial-divider {
+  border-bottom: 1px solid #D5CDBE;
+}
+
+.editorial-divider-dark {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Paper / Travel Journal Surface */
+.paper-card {
+  background-color: #FFFFFF;
+  border: 1px solid #D5CDBE;
+  box-shadow: 0 4px 20px -4px rgba(23, 32, 28, 0.05);
+}
+
+.sand-card {
+  background-color: #E9E3D8;
+  border: 1px solid #D5CDBE;
+}
+
+.forest-card {
+  background-color: #172B2A;
+  color: #F6F3ED;
+  border: 1px solid #2C4947;
+}
+
+/* Subtle Map / Grid Texture Background */
+.map-grid-pattern {
+  background-image: radial-gradient(rgba(23, 32, 28, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.map-grid-pattern-dark {
+  background-image: radial-gradient(rgba(246, 243, 237, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Route Timeline Line */
+.route-line {
+  position: relative;
+}
+.route-line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 11px;
+  width: 1px;
+  background: #C45D3A;
+}
+
+/* Custom Editorial Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E9E3D8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B8C0BC;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5C6B64;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #17201C !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

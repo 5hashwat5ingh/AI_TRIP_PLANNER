@@ -1,0 +1,29 @@
+{
+  "name": "ai-travelops-monorepo",
+  "version": "1.0.0",
+  "description": "AI TravelOps — Multi-Agent Travel Planner",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test": "cd server && npm test",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "multi-agent",
+    "ai",
+    "travel-planner",
+    "openai",
+    "orchestration"
+  ],
+  "author": "AI TravelOps",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "groq": "^6.17.0"
+  }
+}
